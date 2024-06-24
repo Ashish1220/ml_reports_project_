@@ -1,0 +1,276 @@
+/* Resetting default margin and padding */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, ol, ul, li, table, thead, tbody, tr, th, td, form, input, button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    
+  }
+  
+  /* Setting box-sizing to border-box */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* Container styles */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Checkbox styles */
+  input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #d86f2d; /* Using the specified color */
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type="checkbox"]:checked {
+    background-color: #d86f2d; /* Using the specified color */
+  }
+  
+  /* Checkbox custom indicator */
+  input[type="checkbox"]::before {
+    content: '\2713';
+    display: block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  /* Form styles */
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Input styles */
+  input[type="email"],
+  input[type="number"],
+  input[type="file"],
+  input[type="text"],
+  input[type="checkbox"] {
+    width: calc(100% - 10px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Email input specific styles */
+  #email {
+    text-align: left; /* Aligning text to the left */
+  }
+  
+  /* Submit button styles */
+  button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #d86f2d; /* Using the specified color */
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  #topsis_form_heading{
+    font-size: 30px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #b35b24; /* Darken the color on hover */
+  }
+  
+  /* Additional styles */
+  .hidden {
+    display: none;
+  }
+  
+  /* Labels for weights and impacts */
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  #Email-input{
+    margin-top:40px;
+  }
+  /* Inputs for weights and impacts */
+  #numberInput,
+  #operatorInput {
+    width: calc(50% - 5px); /* Make them side by side */
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  /* Container styles */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Checkbox styles */
+  input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #d86f2d;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type="checkbox"]:checked {
+    background-color: #d86f2d;
+  }
+  
+  /* Checkbox custom indicator */
+  input[type="checkbox"]::before {
+    content: '\2713';
+    display: block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  /* Email Div */
+  .email_div {
+    margin-top: 20px;
+    display: flex;
+
+  }
+  
+  /* Label styles */
+  label {
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Input styles */
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Button styles */
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #d86f2d;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #b35b24;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  th {
+    background-color: #b35b24;
+    color: #fff;
+  }
+  #table_heading {
+    font-size: 18px; /* Adjust font size as needed */
+    font-weight: bold; /* Make the text bold */
+    color: #333; /* Set text color to the specified color */
+    margin-bottom: 10px; /* Add some bottom margin for spacing */
+  }
+  
+
+  /* Apply Topsis section styles */
+#apply_topsis {
+    margin-top: 20px;
+    display: flex;
+  }
+  
+  /* Form styles */
+  #topsis {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .topsis_info{
+    margin: 10px
+  }
+  .topsis_discription{
+    padding:10px;
+    background-color: antiquewhite;
+    border:2px solid #b35b24;
+    border-radius: 10px;
+
+  }
+  
+  /* Label styles */
+  #topsis label {
+    flex: 1 1 100%; /* Take full width */
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  /* Input styles */
+  #topsis input[type="number"],
+  #topsis input[type="text"] {
+    flex: 1 1 45%; /* Take 45% of the width */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Button styles */
+  #topsis input[type="submit"] {
+    flex: 1 1 100%; /* Take full width */
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #d86f2d;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #topsis input[type="submit"]:hover {
+    background-color: #b35b24;
+  }
+  

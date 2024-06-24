@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/styles/sent_css.css">
+</head>
+<style>
+    #Email-input {
+        display: none;
+    }
+</style>
+
+<body>
+
+    <br>
+    <div class="email_div">
+        <br>
+        <input type="checkbox" onclick="get_email_input()" name="check_to_email">  &nbsp; &nbsp; &nbsp;
+        <label for="checkbox3">Get Report on your Email</label>
+        <br>
+        <br>
+        <div id="Email-input">
+            <form action="/get_email" method="post">
+                <label for="Email-id">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter Your Email">
+                <div class="hidden">
+                    <input type="text" name="data" value="{{data}}">
+                </div>
+                <button type="submit">Get Reports</button>
+        </div>
+        </form>
+    </div>
+
+    <br>
+    <hr>
+    <table id="table">
+        {% for i,table in zip(titles,tables) %}
+        <div id="table_heading">PREPROCESSING TECHNIQUE: <i> {{i[:-24]}} </i></div>
+        {{ table|safe }}
+        {% endfor %}
+
+    </table>
+<hr><hr>
+    <section id="apply_topsis">
+        
+            <form id="topsis" action="/sent" method="post">
+                <br>
+                <h1 id="topsis_form_heading"><b> APPLY TOPSIS: </b></h1>
+                <br>
+                <br>
+                <br>
+            {% for i in range %}
+            <label for="numberInput">Enter weight for {{colunms[i+2]}}:</label>
+            <input type="number" id="numberInput" name="numberInput" step="any" required>
+
+            <label for="operatorInput">Enter impacts (+ or -) for {{colunms[i+2]}}:</label>
+            <input type="text" id="operatorInput" name="operatorInput" pattern="[+-]" title="Enter '+' or '-' only"
+                required>
+
+            <br>
+
+            <div class="hidden">
+                <input type="text" name="data" value="{{data}}">
+                <input type="text" name="target_col" value="{{target_col}}">
+            </div>
+
+            {% endfor %}
+            <input type="submit" value="Submit">
+        </form>
+        <div class="topsis_info">
+            <h6> <b> APPLY TOPSIS TO YOUR REPORTS: </b></h6>
+            <br>
+            <div class="topsis_discription">
+            <p><b><i> CONFUSED WHICH MODEL WILL BE BEST FOR YOU??<br> NO WORRIES! WE VE GOT TOPSIS HERE!.. </i> </b></p> <br> 
+                TOPSIS (Technique for Order Preference by Similarity to Ideal Solution) is a multi-criteria decision-making method widely used in various fields for its effectiveness and simplicity.</p>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
+
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
+
+<script>
+    function get_email_input() {
+        console.log(document.getElementById("Email-input").style.display)
+        if (document.getElementById("Email-input").style.display == "block") {
+            document.getElementById("Email-input").style.display = "none"
+
+        } else {
+            document.getElementById("Email-input").style.display = "block"
+        }
+    }
+
+
+
+
+
+</script>

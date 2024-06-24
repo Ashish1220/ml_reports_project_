@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/styles/sent_css.css">
+
+</head>
+<body>
+    <br>
+    <div class="email_div">
+        <br>
+        <input type="checkbox" onclick="get_email_input()" name="check_to_email">  &nbsp; &nbsp; &nbsp;
+        <label for="checkbox3">Get Report on your Email</label>
+        <br>
+        <br>
+        <div id="Email-input">
+            <form action="/get_email" method="post">
+                <label for="Email-id">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter Your Email">
+                <div class="hidden">
+                    <input type="text" name="data" value="{{data}}">
+                </div>
+                <button type="submit">Get Reports</button>
+        </div>
+        </form>
+    </div>
+
+    <br>
+    <hr>
+    <table id="table">
+        {% for i,table in zip(titles,tables) %}
+        <div id="table_heading">PREPROCESSING TECHNIQUE: <i> {{i[:-24]}} </i></div>
+        {{ table|safe }}
+        {% endfor %}
+
+    </table>
+</body>
+</html>
+
+<script>
+    function get_email_input() {
+        console.log(document.getElementById("Email-input").style.display)
+        if (document.getElementById("Email-input").style.display == "block") {
+            document.getElementById("Email-input").style.display = "none"
+
+        } else {
+            document.getElementById("Email-input").style.display = "block"
+        }
+    }
+
+
+
+
+
+</script>

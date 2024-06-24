@@ -1,0 +1,36 @@
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+
+.scroll-link {
+  text-decoration: none; /* Remove default link underline */
+}
+
+.scroll-button {
+  
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  background-color: #a06245; /* Darker green */
+  color: white;
+  border: 3px solid white;
+  border-radius: 12px;
+
+}
+
+
+.scroll-button:hover {
+    background-color: #ffffff; /* Green */
+    border: 3px solid black;
+    border-radius: 12px;
+    color: #a06245;
+
+}
+

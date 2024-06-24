@@ -1,0 +1,156 @@
+/* Keyframe animation for subtle background movement */
+@keyframes subtleMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
+}
+body {
+  overflow-y: scroll; /* Always show vertical scrollbar */
+}
+
+
+#Email-input{
+  display: none;
+}
+
+/* Style for form container */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  animation: subtleMove 20s infinite alternate linear;
+  color: white;
+}
+
+/* Background image */
+form {
+  /* background-image: url('../styles/bg_images/background_image.webp'); */
+  background-color:#f44336;
+  background-size: cover;
+}
+
+/* Style for labels */
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: white;
+}
+
+/* Style for inputs */
+input[type="email"],
+input[type="number"],
+input[type="file"],
+input[type="text"],
+input[type="checkbox"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  color: black;
+}
+
+/* Style for submit button */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #af724c;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #68431f;
+}
+
+/* Style for checkbox labels */
+label[for^="checkbox"] {
+  display: inline-block;
+  margin-right: 10px;
+  color: white;
+}
+
+/* Additional styling for checkbox labels */
+label[for="checkbox5"] {
+  margin-right: 5px;
+}
+
+/* Checkboxes style */
+input[type="checkbox"] {
+  margin-right: 5px;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #f9f9f9;
+  border: 2px solid #ccc;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #af724c;
+  border-color: #68431f;
+}
+
+/* Checkbox custom indicator */
+input[type="checkbox"]::before {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 4px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+input[type="checkbox"]:checked::before {
+  background-color: #fff;
+}
+
+#buffering{
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%); 
+  width: 200px;
+  height: 200px;
+}
+
+
+
+@keyframes animation {
+  0% {
+    stroke-dasharray: 1 98;
+    stroke-dashoffset: -105;
+  }
+  50% {
+    stroke-dasharray: 80 10;
+    stroke-dashoffset: -160;
+  }
+  100% {
+    stroke-dasharray: 1 98;
+    stroke-dashoffset: -300;
+  }
+}
+
+#spinner {
+  transform-origin: center;
+  animation-name: animation;
+  animation-duration: 1.2s;
+  animation-timing-function: cubic-bezier;
+  animation-iteration-count: infinite;
+}

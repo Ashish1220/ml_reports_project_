@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get-Ml-reports-Regression</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/styles/submission_form.css">
+</head>
+
+
+<body>
+    
+        <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+          <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+          <a href="/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
+          <a href="/regression" class="w3-bar-item w3-button w3-padding-large w3-white">GET-REGRESSION-REPORTS</a>
+          <a href="/classification" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">GET-CLASSIFICATION-REPORTS</a>
+          <a href="/clustering" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">GET-CLUSTERING-REPORTS</a>
+          <a href="/visualization" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">GET-VISUAL-REPORTS</a>
+  
+        </div>
+      <br>
+      <br>
+    <form action="/regression" method="post" enctype="multipart/form-data" id="submit_form">
+        
+        
+                
+
+
+  
+        
+        <label for="data">Dataset(.csv)</label>
+        <input type="file" accept=".csv" id="file" name="data" placeholder="CSV FILE">
+        <br>
+        <label for="target">Enter Target Column</label>
+        <input type="text" name="target_variable" >
+        <h4> <label for="algo">Check the scores's you want to check your data set on :</label></h4>  
+        <input type="checkbox" value="MAE" name="checkbox1">
+        <label for="checkbox1">Mean Absolute Error</label>
+        <br>
+        <input type="checkbox" value="MSE" name="checkbox1">
+        <label for="checkbox2">Mean Square Error</label>
+        <br>
+        <input type="checkbox" value="RMSE" name="checkbox1">
+        <label for="checkbox3">Root Mean Square Error</label>
+        <br>
+        <input type="checkbox" value="RMSLE" name="checkbox1">
+        <label for="checkbox4">Root Mean Square Logarithmic Error</label>
+        <br>
+        <input type="checkbox" value="MAPE" name="checkbox1">
+        <label for="checkbox5">Mean Percentage Absolute Error</label>
+        <br>
+        <input type="checkbox" value="TT (Sec)" name="checkbox1">
+        <label for="checkbox5">Time to run(Seconds)</label>
+        <br>
+        
+        <h4><label for="preprocessing">DATA-PREPROCESSING:</label></h4>
+        
+        <label for="Note"> Raw data will be preprocessed, if you want other preprocessings see below!</label>
+        <br>
+        <br>
+        
+        <input type="checkbox" value="1" name="checkbox2" id="check1" onclick="uncheck2()">
+        <label for="checkbox6">Get reports for data after normalization</label>
+        <br>
+        <input type="checkbox" value="2" name="checkbox2" id="check1" onclick="uncheck2()">
+        <label for="checkbox7">Get reports for data after transformation</label>
+        <br>
+        <input type="checkbox" value="3" name="checkbox2" id="check1" onclick="uncheck2()">
+        <label for="checkbox8">Get reports for data after PCA</label>
+        <br>
+        <input type="checkbox" value="4" name="checkbox2" id="check2" onclick="uncheck1()">
+        <label for="checkbox9">All above combinations.(May take time)</label>
+        <br>
+        <br>
+        <label for="Note">Note: It may take some minutes to process. Do not refresh</label>
+        <button type="submit" onclick="buffer()">Get Reports</button>
+    </form>
+        
+    <div id="buffering">
+        <svg viewBox="0 0 100 100">
+          <defs>
+            <filter id="shadow">
+              <feDropShadow dx="0" dy="0" stdDeviation="1.5" 
+                flood-color="#FFA500"/>
+            </filter>
+          </defs>
+          <circle id="spinner" style="fill:transparent;stroke:orangered;stroke-width: 7px;stroke-linecap: round;filter:url(#shadow);" cx="50" cy="50" r="45"/>
+      </svg>
+      </div>
+
+
+</body>
+
+</html>
+       
+        <script>
+            let visible=0
+            function uncheck2(){
+                let a= document.querySelectorAll("#check2")
+                a.forEach((checker)=>{
+                    checker.checked=false
+                })
+                
+            }
+            function uncheck1(){
+                let a= document.querySelectorAll("#check1")
+                a.forEach((checker)=>{
+                    checker.checked=false
+                })
+                
+            }
+           
+            function buffer(){
+                document.getElementById("submit_all").display="none"
+                document.getElementById("buffer").display="inline"
+            }
+        </script>

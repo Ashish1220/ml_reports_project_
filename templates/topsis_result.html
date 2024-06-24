@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/styles/topsis_result.css">
+</head>
+
+<body>
+    <h2>TOSPSIS_RESULTS:</h2>
+    <hr>
+    <p>The best Model acorrding to your need will be <b>{{topsis_results[1]["Model"]}}</b> with following stats:</p>
+    <p>Dataset_Name: <b>{{data[:-24]}}</b></p>
+    <p>Best Model (topsis): <b> {{topsis_results[1]["Model"]}} ({{topsis_results[1]["Unnamed: 0"]}})</b></p>
+    <p>Preprocessing-technique: <b>{{topsis_results[2][:-24]}} </b></p>
+    {% for i in range(len(topsis_results[0])-2) %}
+    <p>{{topsis_results[0][i+2]}}: <b> {{ topsis_results[1][i+2]}} </b></p>
+    {% endfor %}
+    <br>
+    <form action="/trained_model" method="post">
+        <div id="smn">
+            <input type="text" name="data" value="{{data}}">
+            <input type="text" name="target_col" value="{{target_col}}">
+            <input type="text" name="selected_model_name" value="{{topsis_results[1][0]}}">
+            <input type="text" name="selected_model_full_name" value="{{topsis_results[1]['Model']}}">
+            <input type="text" name="preprocessing_technique" value="{{topsis_results[0]}}">
+
+        </div>
+        <hr>
+        <p><b>TUNE YOUR MODEL: </b> Click on tune your model to get all tuned hyper parameters of your model for your specific datset.</p>
+        <br>
+        <input type="submit" value="TUNE MODEL">
+    </form>
+    </section>
+    <style>
+        #smn {
+            display: none;
+
+        }
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/styles/trained_model.css">
+</head>
+<body>
+    
+<p>WE FOUND THE BEST HYPERPARAMETERS FOR <b>{{selected_full_model}}</b> AS FOLLOW:</p>
+<hr>
+<p>TUNED MODEL: </p>
+<br>
+{%for k in best_hyperparameters%}
+<b>{{k}}</b>:{{best_hyperparameters[k]}}
+<br>
+{%endfor%}
+
+<hr>
+
+<p>Use it by embedding this dictionary in your model: </p>
+hyperparameters={{best_hyperparameters}}
+
+</body>
+</html>
