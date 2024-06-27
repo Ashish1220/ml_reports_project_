@@ -1,0 +1,19 @@
+,Model,MAE
+rf,Random Forest Regressor,2.3326
+lightgbm,Light Gradient Boosting Machine,2.2423
+gbr,Gradient Boosting Regressor,2.2365
+et,Extra Trees Regressor,2.3505
+br,Bayesian Ridge,2.6414
+ridge,Ridge Regression,2.6413
+lr,Linear Regression,2.6719
+ada,AdaBoost Regressor,2.7546
+lar,Least Angle Regression,2.7508
+lasso,Lasso Regression,3.1141
+llar,Lasso Least Angle Regression,3.1141
+huber,Huber Regressor,3.7211
+dt,Decision Tree Regressor,3.1161
+en,Elastic Net,3.7427
+dummy,Dummy Regressor,6.6534
+knn,K Neighbors Regressor,6.3953
+omp,Orthogonal Matching Pursuit,6.9393
+par,Passive Aggressive Regressor,8.407

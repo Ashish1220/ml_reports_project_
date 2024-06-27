@@ -1,6 +1,8 @@
 import pandas as pd
 
-from pycaret.clustering import *
+from pycaret.clustering import create_model
+from pycaret.clustering import setup
+from pycaret.clustering import pull
 
 
 # def highlight_max(s):
