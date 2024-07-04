@@ -22,11 +22,11 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "tsfyguaistyatuis589566875623568956"
+app.config['SECRET_KEY'] = "" #Please enter your generated secret key and credentials!!!!
 app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
 app.config['MAIL_PORT'] = 587
-app.config['MAIL_USERNAME'] = 'mlreports32700@gmail.com'
-app.config['MAIL_PASSWORD'] = 'repd vkcu tvxc istb' #repd vkcu tvxc istb
+app.config['MAIL_USERNAME'] = ''
+app.config['MAIL_PASSWORD'] = '' 
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
 mail = Mail(app)
